@@ -1,0 +1,50 @@
+#
+# Andromeda input file
+#
+
+# Mesh & BiC file folder
+MDIR ./
+
+# Mesh file
+
+LGEO complex-head-ws-sv-noS-24k.msh
+
+# BiC file
+LBIC complex-head-with-skull.bic
+
+
+
+# Triangle integration (1,3,5),No.recursion
+ITRI 5 20
+# Qudarilateral integration (reg: 1..8), (sing:1..8)
+IQUD 4 4
+
+# Output results for stochastic postprocessing (and.stochastic.txt)
+OSTO No
+# Output initial distribution of function and flux (and.initial.vtu)
+OINI Yes
+# Output results in Paraview format (and.results.vtu)
+OMSH Yes
+
+# Write integrals file (Default = Yes)
+WINT Yes
+# conserve memory
+COME Yes
+
+
+# Screen output
+SCRO No
+
+POST No
+
+
+#
+# Domain Profile Line Export
+#
+DPLE 2
+# profileName P1x P1y P1z P2x P2y P2z NumberOfPoints
+xDP   -80 25 66  90 25 66   171
+yDP   15 -90 66  15 110 66  201
+
+
+

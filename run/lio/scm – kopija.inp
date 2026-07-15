@@ -1,0 +1,32 @@
+#
+# Stochastic collocation method input file
+#
+# Number of random variables
+5
+# Number of collocation points
+4
+# PDF type (uniform or normal or sparseuniform )
+#normal
+#sparseuniform
+uniform
+#
+# list of random variables data  (NORV lines)
+# uniform: name,min,max
+# normal:  name,average,sigma
+#
+C[m] 7.0E-6 1.1E-5
+visinaT[mm] 1.0 2.0
+KvC[Wm2K] 1.67 3.67
+pSist[mbar] 0.095 0.105
+AlfaC[-] 0.3 0.4
+
+#
+# Process results (brain/lio/no)
+#
+lio
+#
+#  Path to simulation files (1,2,3,... folder names assumed)
+#
+./det-sim-results
+
+ 

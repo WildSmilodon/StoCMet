@@ -1,0 +1,89 @@
+#
+#  Andromeda BiC file
+#
+
+#
+# first enter number of equations and the name of each
+#
+EQUATIONS 1
+potential
+
+#
+# Define subdomains (sdName, diff,  followed by list of walls)
+#
+SUBDOMAINS 9
+sdCerebellum  0.66 cerebellum
+sdCerebrum   0.265 whiteMatter
+sdVentricles  1.78 ventricles
+sdGreyMatter 0.239 greyMatter ventricles whiteMatter cerebellum
+sdCSF         1.6136673497296443 outer greyMatter
+sdJaw       0.0035 jaw
+sdTongue     0.355 tongue
+sdHead        0.17 skin skull jaw tongue forhead up
+sdSkull       0.32 outer skull
+#
+# Flip normal orientation
+# SD name, WALL name, factor (-1.0)
+NORMMUL sdVentricles ventricles -1.0
+NORMMUL sdGreyMatter whiteMatter -1.0
+NORMMUL sdGreyMatter cerebellum -1.0
+NORMMUL sdCSF greyMatter -1.0
+NORMMUL sdSkull skull -1.0
+NORMMUL sdSkull outer -1.0
+NORMMUL sdHead jaw -1.0
+NORMMUL sdHead tongue -1.0
+
+
+#
+# boundary conditions
+#
+# BOUNDARY eq.name wallName function/flux/contact const/lin/qud
+
+BOUNDARY potential up function const
+-1.0
+BOUNDARY potential skin flux const
+0.0
+BOUNDARY potential forhead function const
+1.0
+
+BOUNDARY potential cerebellum contact const
+0.0
+BOUNDARY potential outer contact const
+0.0
+BOUNDARY potential skull contact const
+0.0
+BOUNDARY potential ventricles contact const
+0.0
+BOUNDARY potential greyMatter contact const
+0.0
+BOUNDARY potential jaw contact const
+0.0
+BOUNDARY potential tongue contact const
+0.0
+BOUNDARY potential whiteMatter contact const
+0.0
+
+#
+# initial conditions
+#
+# INITIAL eq.name wallName function/flux const/lin/qud
+
+#INITIAL potential stena function lin
+#1.0 0.0 0.0 -1.0
+
+INITIAL potential skin function const 
+0.0
+
+
+#
+# CORNER and EDGE nodes
+#
+# EDGE sdName wall1 wall2 TargetWall
+EDGE sdHead forhead skin forhead 
+EDGE sdHead up skin  up
+
+#
+# SOLVER definition
+#
+SOLVER potential 0 2 2 15000 5 1.0E-6
+

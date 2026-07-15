@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<VTKFile type="Collection" version="0.1"
+         byte_order="LittleEndian"
+         compressor="vtkZLibDataCompressor">
+  <Collection>
+<DataSet timestep="0" group="" part="0" file="and.region.cerebellum.vtu"/>
+<DataSet timestep="0" group="" part="0" file="and.region.outer.vtu"/>
+<DataSet timestep="0" group="" part="0" file="and.region.ventricles.vtu"/>
+<DataSet timestep="0" group="" part="0" file="and.region.forhead.vtu"/>
+<DataSet timestep="0" group="" part="0" file="and.region.greyMatter.vtu"/>
+<DataSet timestep="0" group="" part="0" file="and.region.jaw.vtu"/>
+<DataSet timestep="0" group="" part="0" file="and.region.skin.vtu"/>
+<DataSet timestep="0" group="" part="0" file="and.region.tongue.vtu"/>
+<DataSet timestep="0" group="" part="0" file="and.region.up.vtu"/>
+<DataSet timestep="0" group="" part="0" file="and.region.whiteMatter.vtu"/>
+<DataSet timestep="0" group="" part="0" file="and.region.skull.vtu"/>
+  </Collection>
+</VTKFile>
